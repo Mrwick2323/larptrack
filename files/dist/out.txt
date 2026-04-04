@@ -1,0 +1,22 @@
+o.setCamera(Sp(this, _p, "f").camera)) : null != Sp(this, dp, "f") && (null != Sp(this, dp, "f") && (Sp(this, dp, "f").audioVolume = 1),
+                    null != Sp(this, pp, "f") && (Sp(this, pp, "f").audioVolume = .5),
+                    n.show(),
+                    i.show(),
+                    o.setCamera(Sp(this, dp, "f").camera))
+                }
+                )),
+                window.addEventListener("keydown", Mp(this, vp, (t => {
+                    var e, n, i;
+                    Sp(this, _p, "f").enabled || ("KeyR" == t.code || "Enter" == t.code ? (Sp(this, tp, "m", yp).call(this, a.getColors()),
+                    Sp(this, fp, "f") && (Sp(this, tp, "m", wp).call(this),
+                    Mp(this, fp, !1, "f")),
+                    Sp(this, tp, "m", xp).call(this, a.getColors())) : "ArrowUp" == t.code || "KeyW" == t.code ? (null === (e = Sp(this, dp, "f")) || void 0 === e ? void 0 : e.hasStarted()) || (null === (n = Sp(this, dp, "f")) || void 0 === n || n.start(),
+                    null === (i = Sp(this, pp, "f")) || void 0 === i || i.start()) : "Escape" == t.code && f()),
+                    "Period" == t.code && null != Sp(this, dp, "f") && (Sp(this, _p, "f").camera.position.copy(Sp(this, dp, "f").camera.position),
+                    Sp(this, _p, "f").camera.quaternion.copy(Sp(this, dp, "f").camera.quaternion),
+                    Sp(this, _p, "f").toggle())
+                }
+                ), "f"))
+            }
+            dispose() {
+         
