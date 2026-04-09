@@ -1,0 +1,122 @@
+=== Byte 1056009 ===
+") && xc(this, lc, "f")) {
+                    const t = 4e3;
+                    xc(this, Xh, "f").applyEngineForce(t, 2),
+                    xc(this, Xh, "f").applyEngineForce(t, 3)
+                } else
+                    xc(this, Xh, "f").applyEngineForce(0, 2),
+                    xc(this, Xh, "f").applyEngineForce(0, 3);
+                if (i && !xc(this, oc, "f") && xc(this, lc, "f"))
+                    if (this.getSpeedKmh() > 1) {
+                        const t = 10;
+                        xc(this, Xh, "f").setBrake(t, 0),
+                        xc(this, Xh, "f").setBrake(t, 1),
+                        xc(this, Xh, "f").setBrake(t, 2),
+                        xc(this, Xh, "f"
+
+=== Byte 1052503 ===
+           }
+                    ))
+                }
+                ))
+            }
+            _setBrakeLightEnabled(t) {
+                null != xc(this, tc, "f") && (t ? xc(this, tc, "f").emissive.setRGB(1, .4, .3) : xc(this, tc, "f").emissive.setRGB(0, 0, 0))
+            }
+            start() {
+                yc(this, lc, !0, "f")
+            }
+            _finish() {
+                if (xc(this, lc, "f") && !xc(this, oc, "f") && (yc(this, oc, !0, "f"),
+                this.getTime() < this.getRecordTime())) {
+                    const t = xc(this, ac, "f").getID();
+                    null != t && xc(this, rc, "f").setRecord(t, this.getTime(), xc(this, ic, "f"))
+                }
+  
+
+=== Byte 1045617 ===
+sionTravelCm(1e3),
+                    i.set_m_maxSuspensionForce(1e5),
+                    i.set_m_suspensionStiffness(50),
+                    i.set_m_wheelsDampingRelaxation(5),
+                    i.set_m_wheelsDampingCompression(200),
+                    i.set_m_frictionSlip(3),
+                    i.set_m_rollInfluence(.75)
+                }
+                )),
+                Ammo.destroy(o),
+                Ammo.destroy(l),
+                Ammo.tmpTransform.setIdentity(),
+                Ammo.tmpVector3.setValue(t.position.x, t.position.y, t.position.z),
+                Ammo.tmpTransform.setOrigin(Ammo.tmpVector3),
+                Ammo.tmpQuaternion.setValue(t.quaternion.x, t.quatern
+
+=== Byte 1044250 ===
+d.addRigidBody(i, 1, 2),
+                yc(this, Yh, i, "f");
+                const r = new Ammo.btVehicleTuning
+                  , s = new Ammo.btDefaultVehicleRaycaster(xc(this, qh, "f").world)
+                  , a = new Ammo.btRaycastVehicle(r,i,s);
+                a.setCoordinateSystem(0, 1, 2),
+                xc(this, qh, "f").world.addAction(a),
+                yc(this, Xh, a, "f");
+                const o = new Ammo.btVector3(0,-1,0)
+                  , l = new Ammo.btVector3(-1,0,0);
+                xc(this, $h, "f").forEach((t => {
+                    let e;
+                    if ("WheelFL" == t.name)
+                        e = new Ammo.btVector3(.627909,.27,1.3478);
+         
+
+=== Byte 1039612 ===
+x4(e),new _t(-.701253,n,-.458486).applyMatrix4(e))];
+                        xc(this, ac, "f").checkFinish(i) && this._finish()
+                    }
+                }
+                ), "f")),
+                null != wc._models ? this._init(t) : o.addCompleteListener(( () => {
+                    this._init(t)
+                }
+                ))
+            }
+            _init(t) {
+                this._initGraphics(),
+                this._initPhysics(t)
+            }
+            _initGraphics() {
+                if (null == wc._models)
+                    throw "Car model isn't loaded yet";
+                yc(this, Zh, new Ts, "f"),
+                xc(this, Zh, "f").add(wc._models.chassi
+
+=== Byte 1023454 ===
+               ph.set(this, []),
+                mh.set(this, []),
+                vh(this, eh, new Ammo.btDefaultCollisionConfiguration, "f"),
+                vh(this, nh, new Ammo.btCollisionDispatcher(_h(this, eh, "f")), "f"),
+                vh(this, ih, new Ammo.btDbvtBroadphase, "f"),
+                vh(this, rh, new Ammo.btSequentialImpulseConstraintSolver, "f"),
+                vh(this, sh, new Ammo.btDiscreteDynamicsWorld(_h(this, nh, "f"),_h(this, ih, "f"),_h(this, rh, "f"),_h(this, eh, "f")), "f"),
+                _h(this, sh, "f").getPairCache().setInternalGhostPairCallback(new Ammo.btGhostPairCallback),
+                _h(this, sh, "f").setGravity(new Ammo.btVector3(0,-9.82,0))
+
+
+=== Byte 619171 ===
+.unshift(c) : !0 === a.transparent ? r.unshift(c) : n.unshift(c)
+                },
+                finish: function() {
+                    for (let n = e, i = t.length; n < i; n++) {
+                        const e = t[n];
+                        if (null === e.id)
+                            break;
+                        e.id = null,
+                        e.object = null,
+                        e.geometry = null,
+                        e.material = null,
+                        e.group = null
+                    }
+                },
+                sort: function(t, e) {
+                    n.length > 1 && n.sort(t || ls),
+                    i.length > 1 && i.sort(e || hs),
+        

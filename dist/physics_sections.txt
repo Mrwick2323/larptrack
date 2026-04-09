@@ -1,0 +1,132 @@
+=== checkFinish at 1039607 ===
+f").currentFrame % 10 == 0 && this._updateSkidmarksConditions(10 * t);
+                        const e = this.getMatrix4()
+                          , n = .16
+                          , i = [new Ye(new _t(0,n,-1.65436).applyMatrix4(e),new _t(.701253,n,-.458486).applyMatrix4(e),new _t(-.701253,n,-.458486).applyMatrix4(e)), new Ye(new _t(0,n,1.94498).applyMatrix4(e),new _t(.701253,n,-.458486).applyMatrix4(e),new _t(-.701253,n,-.458486).applyMatrix4(e))];
+                        xc(this, ac, "f").checkFinish(i) && this._finish()
+                    }
+                }
+                ), "f")),
+                null != wc._models ? this._init(t) : o.addCompleteListener(( () => {
+                    this._init(t)
+                }
+                ))
+            }
+            _init(t) {
+                this._initGraphics(),
+                this._initPhysics(t)
+            }
+            _initGraphics() {
+                if (null == wc._models)
+                    throw "Car model isn't loaded yet";
+    
+
+=== checkFinish at 1138952 ===
+                 r.setMatrixAt(t, n[t].matrix);
+                        Bu(this, Lu, "f").scene.add(r),
+                        Bu(this, Ou, "f").push(r);
+                        const s = new wu(r,1192238);
+                        s.update(new Zn(new _t(0,1,0),0), e),
+                        Bu(this, Lu, "f").scene.add(s),
+                        Bu(this, Ou, "f").push(s)
+                    }
+                }
+                )),
+                this._refreshBounds()
+            }
+            checkFinish(t) {
+                return Bu(this, Iu, "f").some(( ({x: e, y: n, z: i, rotation: r, type: s}) => {
+                    if (s.id == $c.Finish) {
+                        const s = new _t(e * Wu.partWidth,n * Wu.partHeight + 2.2,i * Wu.partLength)
+                          , a = 11
+                          , o = 3.8
+                          , l = 2;
+                        let h;
+                        if (0 == r)
+                            h = new _t(a,o,l);
+                        else if 
+
+=== getTime at 1052890 ===
+, "f").emissive.setRGB(1, .4, .3) : xc(this, tc, "f").emissive.setRGB(0, 0, 0))
+            }
+            start() {
+                yc(this, lc, !0, "f")
+            }
+            _finish() {
+                if (xc(this, lc, "f") && !xc(this, oc, "f") && (yc(this, oc, !0, "f"),
+                this.getTime() < this.getRecordTime())) {
+                    const t = xc(this, ac, "f").getID();
+                    null != t && xc(this, rc, "f").setRecord(t, this.getTime(), xc(this, ic, "f"))
+                }
+            }
+            hasStarted() {
+                return xc(this, lc, "f")
+            }
+
+
+=== getTime at 1053053 ===
+   }
+            _finish() {
+                if (xc(this, lc, "f") && !xc(this, oc, "f") && (yc(this, oc, !0, "f"),
+                this.getTime() < this.getRecordTime())) {
+                    const t = xc(this, ac, "f").getID();
+                    null != t && xc(this, rc, "f").setRecord(t, this.getTime(), xc(this, ic, "f"))
+                }
+            }
+            hasStarted() {
+                return xc(this, lc, "f")
+            }
+            hasFinished() {
+                return xc(this, oc, "f")
+            }
+            getRecording() {
+                return xc(this, ic, "f")
+          
+
+=== getSpeedKmh at 1038876 ===
+         null != xc(this, Xh, "f") && (xc(this, qh, "f").activePhysicsAt(this.getPosition()),
+                    this._updateAerodynamics(),
+                    this._updateControls(t),
+                    xc(this, oc, "f") || xc(this, jh, "f").update(this.getPosition(), this.getQuaternion(), this.getSpeedKmh()))
+                }
+                ), "f")),
+                xc(this, qh, "f").addPostStepEventListener(yc(this, vc, (t => {
+                    if (null != xc(this, Xh, "f")) {
+                        xc(this, qh, "f").currentFrame % 10 == 0 && this._updateSkidmarksConditions(10 * t);
+         
+
+=== getSpeedKmh at 1049562 ===
+     null != xc(this, vc, "f") && xc(this, qh, "f").removePostStepEventListener(xc(this, vc, "f")),
+                xc(this, qh, "f").dispose()
+            }
+            getChassisMatrix() {
+                return null != xc(this, Jh, "f") ? xc(this, Jh, "f").matrix : null
+            }
+            getSpeedKmh() {
+                return null != xc(this, Xh, "f") && this.hasStarted() ? xc(this, Xh, "f").getCurrentSpeedKmHour() : 0
+            }
+            getColors() {
+                let t = "#000000"
+                  , e = "#000000"
+                  , n = "#000000"
+                  , i = "#000000";
+
+
+=== stepSimulation at 1029407 ===
+     fh = new WeakMap,
+        ph = new WeakMap,
+        mh = new WeakMap,
+        $l = new WeakSet,
+        gh = function() {
+            var t;
+            for (let t = 0; t < _h(this, ph, "f").length; ++t)
+                _h(this, ph, "f")[t](1 / _h(this, fh, "f"));
+            _h(this, sh, "f").stepSimulation(1 / _h(this, fh, "f"), 0, 1 / _h(this, fh, "f")),
+            vh(this, dh, (t = _h(this, dh, "f"),
+            ++t), "f");
+            for (let t = 0; t < _h(this, mh, "f").length; ++t)
+                _h(this, mh, "f")[t](1 / _h(this, fh, "f"))
+        }
+        ,
+        hh = {
+            value:

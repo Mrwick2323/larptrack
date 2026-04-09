@@ -1,0 +1,214 @@
+=== .track at 853945 ===
+his.copySampleValue_(t - 1)
+            }
+        }
+        class ka {
+            constructor(t, e, n, i) {
+                if (void 0 === t)
+                    throw new Error("THREE.KeyframeTrack: track name is undefined");
+                if (void 0 === e || 0 === e.length)
+                    throw new Error("THREE.KeyframeTrack: no keyframes in track named " + t);
+                this.name = t,
+                this.times = Sa(e, this.TimeBufferType),
+                this.values = Sa(n, this.ValueBufferType),
+                this.setInterpolation(i || this.DefaultInterpolation)
+            }
+ 
+
+=== .track at 854098 ===
+          throw new Error("THREE.KeyframeTrack: track name is undefined");
+                if (void 0 === e || 0 === e.length)
+                    throw new Error("THREE.KeyframeTrack: no keyframes in track named " + t);
+                this.name = t,
+                this.times = Sa(e, this.TimeBufferType),
+                this.values = Sa(n, this.ValueBufferType),
+                this.setInterpolation(i || this.DefaultInterpolation)
+            }
+            static toJSON(t) {
+                const e = t.constructor;
+                let n;
+                if (e.toJSON !== this.toJSON)
+             
+
+=== .track at 855928 ===
+          e = this.InterpolantFactoryMethodSmooth
+                }
+                if (void 0 === e) {
+                    const e = "unsupported interpolation for " + this.ValueTypeName + " keyframe track named " + this.name;
+                    if (void 0 === this.createInterpolant) {
+                        if (t === this.DefaultInterpolation)
+                            throw new Error(e);
+                        this.setInterpolation(this.DefaultInterpolation)
+                    }
+                    return console.warn("THREE.KeyframeTrack:", e),
+                    this
+                }
+  
+
+=== parseTrack at 895902 ===
+, _o) + "$")
+          , wo = ["material", "materials", "bones", "map"];
+        class bo {
+            constructor(t, e, n) {
+                this.path = e,
+                this.parsedPath = n || bo.parseTrackName(e),
+                this.node = bo.findNode(t, this.parsedPath.nodeName),
+                this.rootNode = t,
+                this.getValue = this._getValue_unbound,
+                this.setValue = this._setValue_unbound
+            }
+            static create(t, e, n) {
+                return t && t.isAnimationObjectGroup ? new bo.Composite(t,e,n) : new bo(t,e,n)
+            }
+            sta
+
+=== parseTrack at 896432 ===
+ectGroup ? new bo.Composite(t,e,n) : new bo(t,e,n)
+            }
+            static sanitizeNodeName(t) {
+                return t.replace(/\s/g, "_").replace(vo, "")
+            }
+            static parseTrackName(t) {
+                const e = xo.exec(t);
+                if (null === e)
+                    throw new Error("PropertyBinding: Cannot parse trackName: " + t);
+                const n = {
+                    nodeName: e[2],
+                    objectName: e[3],
+                    objectIndex: e[4],
+                    propertyName: e[5],
+                    propertyIndex: e[6]
+             
+
+=== parseTrack at 906541 ===
+s._getValue_unbound,
+                this.setValue = this._setValue_unbound
+            }
+        }
+        bo.Composite = class {
+            constructor(t, e, n) {
+                const i = n || bo.parseTrackName(e);
+                this._targetGroup = t,
+                this._bindings = t.subscribe_(e, i)
+            }
+            getValue(t, e) {
+                this.bind();
+                const n = this._targetGroup.nCachedObjects_
+                  , i = this._bindings[n];
+                void 0 !== i && i.getValue(t, e)
+            }
+            setValue(t, e) {
+                const n = this._b
+
+=== loadTrack at 1141021 ===
+         return Bu(this, Iu, "f").forEach((e => {
+                    t.addPart(e.x, e.y, e.z, e.type.id, e.rotation)
+                }
+                )),
+                t
+            }
+            loadTrackData(t, e=!0) {
+                return this.clear(),
+                zu(this, Nu, e ? t.getId() : null, "f"),
+                t.forEachPart(( (t, e, n, i, r) => {
+                    this.setPart(t, e, n, i, r)
+                }
+                )),
+                !0
+            }
+            createThumbnailFromTrackData(t) {
+                const e = document.createElement("canvas")
+             
+
+=== loadTrack at 1185850 ===
+) => {
+                    lf(this, Id, "f").className = "editor",
+                    lf(this, Bd, "f").hide()
+                }
+                ),( (t, e) => {
+                    lf(this, Md, "f").loadTrackData(t, !1),
+                    lf(this, Md, "f").generateMeshes(),
+                    of(this, Vd, !0, "f"),
+                    lf(this, Dd, "f").value = e,
+                    this.resetView(),
+                    lf(this, Id, "f").className = "editor",
+                    lf(this, Bd, "f").hide()
+                }
+                )), "f");
+                const a = document.createElement("bu
+
+=== loadTrack at 1193511 ===
+how"),
+                        lf(this, Nd, "f").classList.add("hide")
+                    }
+                    ), 3e3), "f")
+                }
+                ), 0), "f")
+            }
+            _loadTrackParts() {
+                const t = lf(this, Sd, "f").getAllParts();
+                for (let e = 0; e < t.length; ++e) {
+                    const n = t[e];
+                    if (null == n.object)
+                        throw "Mesh is not loaded";
+                    const i = n.object.clone()
+                      , r = document.createElement("button");
+                    r.addEventListener(
+
+=== JSON.parse at 159509 ===
+Alpha = t.premultiplyAlpha,
+                this.flipY = t.flipY,
+                this.unpackAlignment = t.unpackAlignment,
+                this.encoding = t.encoding,
+                this.userData = JSON.parse(JSON.stringify(t.userData)),
+                this.needsUpdate = !0,
+                this
+            }
+            toJSON(t) {
+                const e = void 0 === t || "string" == typeof t;
+                if (!e && void 0 !== t.textures[this.uuid])
+                    return t.textures[this.uuid];
+                const n = {
+                    metadata: {
+                        version: 4.5,
+
+
+=== JSON.parse at 246488 ===
+stShadow,
+                this.receiveShadow = t.receiveShadow,
+                this.frustumCulled = t.frustumCulled,
+                this.renderOrder = t.renderOrder,
+                this.userData = JSON.parse(JSON.stringify(t.userData)),
+                !0 === e)
+                    for (let e = 0; e < t.children.length; e++) {
+                        const n = t.children[e];
+                        this.add(n.clone())
+                    }
+                return this
+            }
+        }
+        Ue.DEFAULT_UP = new _t(0,1,0),
+        Ue.DEFAULT_MATRIX_AUTO_UPDATE = !0,
+        Ue.DEFAULT_MATRIX_WO
+
+=== JSON.parse at 267761 ===
+premultipliedAlpha,
+                this.forceSinglePass = t.forceSinglePass,
+                this.visible = t.visible,
+                this.toneMapped = t.toneMapped,
+                this.userData = JSON.parse(JSON.stringify(t.userData)),
+                this
+            }
+            dispose() {
+                this.dispatchEvent({
+                    type: "dispose"
+                })
+            }
+            set needsUpdate(t) {
+                !0 === t && this.version++
+            }
+        }
+        const Je = {
+            aliceblue: 15792383,
+            antiquewhite: 16444375,
+            aqu
